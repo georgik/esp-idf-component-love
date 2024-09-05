@@ -1,8 +1,55 @@
+idf_component_register(
+    SRCS
+        "love/src/common/android.cpp"
+        "love/src/common/android.h"
+        "love/src/common/b64.cpp"
+        "love/src/common/b64.h"
+        "love/src/common/Color.h"
+        "love/src/common/config.h"
+        "love/src/common/DataEspIdf.cpp"
+        "love/src/common/Data.h"
+        "love/src/common/delay.cpp"
+        "love/src/common/delay.h"
+        #"love/src/common/deprecation.cpp"
+        #"love/src/common/deprecation.h"
+        "love/src/common/EnumMap.h"
+        "love/src/common/Exception.cpp"
+        "love/src/common/Exception.h"
+        "love/src/common/floattypes.cpp"
+        "love/src/common/floattypes.h"
+        "love/src/common/int.h"
+        "love/src/common/math.h"
+        "love/src/common/Matrix.cpp"
+        "love/src/common/Matrix.h"
+        "love/src/common/memory.cpp"
+        "love/src/common/memory.h"
+        "love/src/common/Module.cpp"
+        "love/src/common/Module.h"
+        "love/src/common/Object.cpp"
+        "love/src/common/Object.h"
+        "love/src/common/Optional.h"
+        "love/src/common/pixelformat.cpp"
+        "love/src/common/pixelformat.h"
+        "love/src/common/Range.h"
+        "love/src/common/Reference.cpp"
+        "love/src/common/Reference.h"
+        "love/src/common/runtime.cpp"
+        "love/src/common/runtime.h"
+        "love/src/common/Stream.cpp"
+        "love/src/common/Stream.h"
+        "love/src/common/StringMap.cpp"
+        "love/src/common/StringMap.h"
+        "love/src/common/types.cpp"
+        "love/src/common/types.h"
+        "love/src/common/utf8.cpp"
+        "love/src/common/utf8.h"
+        "love/src/common/Variant.cpp"
+        "love/src/common/Variant.h"
+        "love/src/common/Vector.h"
+        "love/src/common/version.h"
+    INCLUDE_DIRS
+        "love/src"
+)
 
-idf_component_register( )
-
-#set(FMT_INSTALL OFF)
-add_subdirectory(love)
-
-target_link_libraries(${COMPONENT_LIB} INTERFACE love::love)
+add_compile_definitions(LUA_32BITS)
 

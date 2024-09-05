@@ -1,3 +1,4 @@
 [submodule "love"]
 	path = love
-	url = https://github.com/love2d/love.git
+	url = https://github.com/georgik/love.git
+	branch = feature/esp-idf
