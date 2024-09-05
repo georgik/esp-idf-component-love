@@ -1,9 +1,10 @@
 
 description: Love 3.0
 license: Zlib
-url: https://github.com/libsdl-org/SDL_ttf
-repository: https://github.com/georgik/esp-idf-component-SDL_ttf
+url: https://love2d.org/
+repository: https://github.com/georgik/esp-idf-component-love
 version: 3.0.0~1
 
 dependencies:
   espressif/freetype: "^2.13.0~3"
+  georgik/lua: "^5.5.0"
