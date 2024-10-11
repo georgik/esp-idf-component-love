@@ -10,7 +10,7 @@ idf_component_register(
         "love/src/common/Data.h"
         "love/src/common/delay.cpp"
         "love/src/common/delay.h"
-        #"love/src/common/deprecation.cpp"
+        "love/src/common/deprecation.cpp"
         #"love/src/common/deprecation.h"
         "love/src/common/EnumMap.h"
         "love/src/common/Exception.cpp"
@@ -47,6 +47,46 @@ idf_component_register(
         "love/src/common/Variant.h"
         "love/src/common/Vector.h"
         "love/src/common/version.h"
+
+        # "love/src/libraries/luasocket/luasocket.cpp"
+        # "love/src/libraries/glslang/glslang/Include/intermediate.h"
+        "love/src/libraries/glslang/glslang/MachineIndependent/Constant.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/InfoSink.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/Intermediate.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/intermOut.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/IntermTraverse.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/linkValidate.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/PoolAlloc.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/reflection.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/ShaderLang.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/SpirvIntrinsics.cpp"
+        "love/src/libraries/glslang/glslang/MachineIndependent/Versions.cpp"
+
+        "love/src/modules/audio/Audio.cpp"
+
+        "love/src/modules/font/GlyphData.cpp"
+        "love/src/modules/font/Rasterizer.cpp"
+        "love/src/modules/font/TextShaper.cpp"
+
+        "love/src/modules/graphics/Drawable.cpp"
+        "love/src/modules/graphics/Font.cpp"
+        "love/src/modules/graphics/Graphics.cpp"
+        "love/src/modules/graphics/Texture.cpp"
+        "love/src/modules/graphics/Shader.cpp"
+        "love/src/modules/graphics/Volatile.cpp"
+
+        "love/src/modules/graphics/wrap_Font.cpp"
+        "love/src/modules/graphics/wrap_Graphics.cpp"
+
+        "love/src/modules/image/CompressedImageData.cpp"
+
+        "love/src/modules/love/love.cpp"
+
+        "love/src/modules/math/Transform.cpp"
+
+        "love/src/modules/system/System.cpp"
+
+        "love/src/modules/window/Window.cpp"
     INCLUDE_DIRS
         "love/src"
         "love/src/modules"
