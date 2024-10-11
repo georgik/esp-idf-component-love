@@ -8,6 +8,6 @@ version: 3.0.0~1
 dependencies:
   espressif/freetype: "^2.13.0~3"
   georgik/lua: "^5.5.0"
-  georgik/sdl:
-    git: https://github.com/georgik/esp-idf-component-SDL.git
+  georgik/sdl: "^3.1.2~6"
+#    git: https://github.com/georgik/esp-idf-component-SDL.git
 
