@@ -53,3 +53,4 @@ idf_component_register(
 
 add_compile_definitions(LUA_32BITS)
 
+target_compile_options(${COMPONENT_LIB} PRIVATE -fexceptions)
