@@ -1,97 +1,130 @@
+
 idf_component_register(
-    SRCS
-        "love/src/common/android.cpp"
-        "love/src/common/android.h"
-        "love/src/common/b64.cpp"
-        "love/src/common/b64.h"
-        "love/src/common/Color.h"
-        "love/src/common/config.h"
-        "love/src/common/Data.cpp"
-        "love/src/common/Data.h"
-        "love/src/common/delay.cpp"
-        "love/src/common/delay.h"
-        "love/src/common/deprecation.cpp"
-        #"love/src/common/deprecation.h"
-        "love/src/common/EnumMap.h"
-        "love/src/common/Exception.cpp"
-        "love/src/common/Exception.h"
-        "love/src/common/floattypes.cpp"
-        "love/src/common/floattypes.h"
-        "love/src/common/int.h"
-        "love/src/common/math.h"
-        "love/src/common/Matrix.cpp"
-        "love/src/common/Matrix.h"
-        "love/src/common/memory.cpp"
-        "love/src/common/memory.h"
-        "love/src/common/Module.cpp"
-        "love/src/common/Module.h"
-        "love/src/common/Object.cpp"
-        "love/src/common/Object.h"
-        "love/src/common/Optional.h"
-        "love/src/common/pixelformat.cpp"
-        "love/src/common/pixelformat.h"
-        "love/src/common/Range.h"
-        "love/src/common/Reference.cpp"
-        "love/src/common/Reference.h"
-        "love/src/common/runtime.cpp"
-        "love/src/common/runtime.h"
-        "love/src/common/Stream.cpp"
-        "love/src/common/Stream.h"
-        "love/src/common/StringMap.cpp"
-        "love/src/common/StringMap.h"
-        "love/src/common/types.cpp"
-        "love/src/common/types.h"
-        "love/src/common/utf8.cpp"
-        "love/src/common/utf8.h"
-        "love/src/common/Variant.cpp"
-        "love/src/common/Variant.h"
-        "love/src/common/Vector.h"
-        "love/src/common/version.h"
 
-        # "love/src/libraries/luasocket/luasocket.cpp"
-        # "love/src/libraries/glslang/glslang/Include/intermediate.h"
-        "love/src/libraries/glslang/glslang/MachineIndependent/Constant.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/InfoSink.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/Intermediate.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/intermOut.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/IntermTraverse.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/linkValidate.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/PoolAlloc.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/reflection.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/ShaderLang.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/SpirvIntrinsics.cpp"
-        "love/src/libraries/glslang/glslang/MachineIndependent/Versions.cpp"
-
-        "love/src/modules/audio/Audio.cpp"
-
-        "love/src/modules/font/GlyphData.cpp"
-        "love/src/modules/font/Rasterizer.cpp"
-        "love/src/modules/font/TextShaper.cpp"
-
-        "love/src/modules/graphics/Drawable.cpp"
-        "love/src/modules/graphics/Font.cpp"
-        "love/src/modules/graphics/Graphics.cpp"
-        "love/src/modules/graphics/Texture.cpp"
-        "love/src/modules/graphics/Shader.cpp"
-        "love/src/modules/graphics/Volatile.cpp"
-
-        "love/src/modules/graphics/wrap_Font.cpp"
-        "love/src/modules/graphics/wrap_Graphics.cpp"
-
-        "love/src/modules/image/CompressedImageData.cpp"
-
-        "love/src/modules/love/love.cpp"
-
-        "love/src/modules/math/Transform.cpp"
-
-        "love/src/modules/system/System.cpp"
-
-        "love/src/modules/window/Window.cpp"
-    INCLUDE_DIRS
-        "love/src"
-        "love/src/modules"
+    REQUIRES georgik__SDL georgik__lua
 )
+
+set(LOVE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/love)
+add_subdirectory(${LOVE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/love_build)
+# target_link_libraries(${COMPONENT_LIB} PUBLIC love)
+target_include_directories(${COMPONENT_LIB} INTERFACE
+    ${LOVE_DIR}/src
+    ${LOVE_DIR}/include
+)
+target_compile_definitions(${COMPONENT_LIB} INTERFACE
+    -fexceptions
+)
+
+# idf_component_register(
+#     SRCS
+#         "love/src/common/android.cpp"
+#         "love/src/common/android.h"
+#         "love/src/common/b64.cpp"
+#         "love/src/common/b64.h"
+#         "love/src/common/Color.h"
+#         "love/src/common/config.h"
+#         "love/src/common/Data.cpp"
+#         "love/src/common/Data.h"
+#         "love/src/common/delay.cpp"
+#         "love/src/common/delay.h"
+#         "love/src/common/deprecation.cpp"
+#         #"love/src/common/deprecation.h"
+#         "love/src/common/EnumMap.h"
+#         "love/src/common/Exception.cpp"
+#         "love/src/common/Exception.h"
+#         "love/src/common/floattypes.cpp"
+#         "love/src/common/floattypes.h"
+#         "love/src/common/int.h"
+#         "love/src/common/math.h"
+#         "love/src/common/Matrix.cpp"
+#         "love/src/common/Matrix.h"
+#         "love/src/common/memory.cpp"
+#         "love/src/common/memory.h"
+#         "love/src/common/Module.cpp"
+#         "love/src/common/Module.h"
+#         "love/src/common/Object.cpp"
+#         "love/src/common/Object.h"
+#         "love/src/common/Optional.h"
+#         "love/src/common/pixelformat.cpp"
+#         "love/src/common/pixelformat.h"
+#         "love/src/common/Range.h"
+#         "love/src/common/Reference.cpp"
+#         "love/src/common/Reference.h"
+#         "love/src/common/runtime.cpp"
+#         "love/src/common/runtime.h"
+#         "love/src/common/Stream.cpp"
+#         "love/src/common/Stream.h"
+#         "love/src/common/StringMap.cpp"
+#         "love/src/common/StringMap.h"
+#         "love/src/common/types.cpp"
+#         "love/src/common/types.h"
+#         "love/src/common/utf8.cpp"
+#         "love/src/common/utf8.h"
+#         "love/src/common/Variant.cpp"
+#         "love/src/common/Variant.h"
+#         "love/src/common/Vector.h"
+#         "love/src/common/version.h"
+
+#         # "love/src/libraries/luasocket/luasocket.cpp"
+#         # "love/src/libraries/glslang/glslang/Include/intermediate.h"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/Constant.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/InfoSink.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/Initialize.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/Intermediate.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/intermOut.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/IntermTraverse.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/linkValidate.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/ParseHelper.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/PoolAlloc.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/preprocessor/PpAtom.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/preprocessor/PpContext.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/preprocessor/PpScanner.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/propagateNoContraction.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/reflection.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/Scan.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/ShaderLang.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/SpirvIntrinsics.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/SymbolTable.cpp"
+#         "love/src/libraries/glslang/glslang/MachineIndependent/Versions.cpp"
+
+#         "love/src/modules/audio/Audio.cpp"
+
+#         "love/src/modules/data/DataModule.cpp"
+#         "love/src/modules/data/HashFunction.cpp"
+
+#         "love/src/modules/font/GlyphData.cpp"
+#         "love/src/modules/font/Rasterizer.cpp"
+#         "love/src/modules/font/TextShaper.cpp"
+
+#         "love/src/modules/graphics/Drawable.cpp"
+#         "love/src/modules/graphics/Font.cpp"
+#         "love/src/modules/graphics/Graphics.cpp"
+#         "love/src/modules/graphics/Quad.cpp"
+#         "love/src/modules/graphics/renderstate.cpp"
+#         "love/src/modules/graphics/Texture.cpp"
+#         "love/src/modules/graphics/Shader.cpp"
+#         "love/src/modules/graphics/ShaderStage.cpp"
+#         "love/src/modules/graphics/Volatile.cpp"
+#         "love/src/modules/graphics/vertex.cpp"
+
+#         "love/src/modules/graphics/wrap_Font.cpp"
+#         "love/src/modules/graphics/wrap_Graphics.cpp"
+
+#         "love/src/modules/image/CompressedImageData.cpp"
+
+#         "love/src/modules/love/love.cpp"
+
+#         "love/src/modules/math/MathModule.cpp"
+#         "love/src/modules/math/Transform.cpp"
+
+#         "love/src/modules/system/System.cpp"
+
+#         "love/src/modules/window/Window.cpp"
+#     INCLUDE_DIRS
+#         "love/src"
+#         "love/src/modules"
+# )
 
 #add_compile_definitions(LUA_32BITS)
 
-target_compile_options(${COMPONENT_LIB} PRIVATE -fexceptions)
+# target_compile_options(${COMPONENT_LIB} PRIVATE -fexceptions)
