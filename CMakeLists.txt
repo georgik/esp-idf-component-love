@@ -6,7 +6,7 @@ idf_component_register(
         "love/src/common/b64.h"
         "love/src/common/Color.h"
         "love/src/common/config.h"
-        "love/src/common/DataEspIdf.cpp"
+        "love/src/common/Data.cpp"
         "love/src/common/Data.h"
         "love/src/common/delay.cpp"
         "love/src/common/delay.h"
@@ -49,8 +49,9 @@ idf_component_register(
         "love/src/common/version.h"
     INCLUDE_DIRS
         "love/src"
+        "love/src/modules"
 )
 
-add_compile_definitions(LUA_32BITS)
+#add_compile_definitions(LUA_32BITS)
 
 target_compile_options(${COMPONENT_LIB} PRIVATE -fexceptions)
