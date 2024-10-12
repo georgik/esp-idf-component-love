@@ -176,6 +176,24 @@ idf_component_register(
         "love/src/modules/data/HashFunction.cpp"
 
 
+        # add_library(love_filesystem_root STATIC
+        "love/src/modules/filesystem/File.cpp"
+        "love/src/modules/filesystem/File.h"
+        "love/src/modules/filesystem/FileData.cpp"
+        "love/src/modules/filesystem/FileData.h"
+        # "love/src/modules/filesystem/Filesystem.cpp"
+        # "love/src/modules/filesystem/Filesystem.h"
+        "love/src/modules/filesystem/NativeFile.cpp"
+        "love/src/modules/filesystem/NativeFile.h"
+        "love/src/modules/filesystem/wrap_File.cpp"
+        "love/src/modules/filesystem/wrap_File.h"
+        "love/src/modules/filesystem/wrap_FileData.cpp"
+        "love/src/modules/filesystem/wrap_FileData.h"
+        # "love/src/modules/filesystem/wrap_Filesystem.cpp"
+        # "love/src/modules/filesystem/wrap_Filesystem.h"
+        "love/src/modules/filesystem/wrap_NativeFile.cpp"
+        "love/src/modules/filesystem/wrap_NativeFile.h"
+
         # add_library(love_font_root STATIC
         "love/src/modules/font/BMFontRasterizer.cpp"
         "love/src/modules/font/BMFontRasterizer.h"
@@ -276,6 +294,15 @@ idf_component_register(
 
         "love/src/modules/image/CompressedImageData.cpp"
 
+        # add_library(love_joystick_root STATIC
+        "love/src/modules/joystick/Joystick.cpp"
+        "love/src/modules/joystick/Joystick.h"
+        "love/src/modules/joystick/JoystickModule.h"
+        "love/src/modules/joystick/wrap_Joystick.cpp"
+        "love/src/modules/joystick/wrap_Joystick.h"
+        "love/src/modules/joystick/wrap_JoystickModule.cpp"
+        "love/src/modules/joystick/wrap_JoystickModule.h"
+
         "love/src/modules/love/love.cpp"
 
         # add_library(love_math STATIC
@@ -298,14 +325,26 @@ idf_component_register(
         "love/src/modules/math/wrap_Transform.cpp"
         "love/src/modules/math/wrap_Transform.h"
 
+        # add_library(love_sensor_root STATIC
+        "love/src/modules/sensor/Sensor.cpp"
+        "love/src/modules/sensor/Sensor.h"
+        "love/src/modules/sensor/wrap_Sensor.cpp"
+        "love/src/modules/sensor/wrap_Sensor.h"
+
         "love/src/modules/system/System.cpp"
 
         "love/src/modules/window/Window.cpp"
     INCLUDE_DIRS
         "love/src"
         "love/src/modules"
+
+    REQUIRES
+        georgik__lua
 )
 
 #add_compile_definitions(LUA_32BITS)
 
-target_compile_options(${COMPONENT_LIB} PRIVATE -fexceptions)
+target_compile_options(${COMPONENT_LIB} PRIVATE
+    -fexceptions
+    # -fpermissive # SDL dynamic load - probably could be removed
+)
