@@ -333,6 +333,15 @@ idf_component_register(
 
         "love/src/modules/system/System.cpp"
 
+        # add_library(love_video_root STATIC
+        "love/src/modules/video/Video.h"
+        "love/src/modules/video/VideoStream.cpp"
+        "love/src/modules/video/VideoStream.h"
+        "love/src/modules/video/wrap_Video.cpp"
+        "love/src/modules/video/wrap_Video.h"
+        "love/src/modules/video/wrap_VideoStream.cpp"
+        "love/src/modules/video/wrap_VideoStream.h"
+
         "love/src/modules/window/Window.cpp"
     INCLUDE_DIRS
         "love/src"
@@ -340,6 +349,8 @@ idf_component_register(
 
     REQUIRES
         georgik__lua
+        georgik__ogg
+        georgik__theora
 )
 
 #add_compile_definitions(LUA_32BITS)
