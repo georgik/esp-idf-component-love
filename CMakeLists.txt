@@ -333,6 +333,29 @@ idf_component_register(
 
         "love/src/modules/system/System.cpp"
 
+        # add_library(love_thread_root STATIC
+        "love/src/modules/thread/Channel.cpp"
+        "love/src/modules/thread/Channel.h"
+        "love/src/modules/thread/LuaThread.cpp"
+        "love/src/modules/thread/LuaThread.h"
+        "love/src/modules/thread/Thread.h"
+        "love/src/modules/thread/ThreadModule.cpp"
+        "love/src/modules/thread/ThreadModule.h"
+        "love/src/modules/thread/threads.cpp"
+        "love/src/modules/thread/threads.h"
+        "love/src/modules/thread/wrap_Channel.cpp"
+        "love/src/modules/thread/wrap_Channel.h"
+        "love/src/modules/thread/wrap_LuaThread.cpp"
+        "love/src/modules/thread/wrap_LuaThread.h"
+        "love/src/modules/thread/wrap_ThreadModule.cpp"
+        "love/src/modules/thread/wrap_ThreadModule.h"
+
+        # add_library(love_thread_sdl STATIC
+        # "lovel/src/modules/thread/sdl/Thread.cpp"
+        # "lovel/src/modules/thread/sdl/Thread.h"
+        # "lovel/src/modules/thread/sdl/threads.cpp"
+        # "lovel/src/modules/thread/sdl/threads.h"
+
         # add_library(love_video_root STATIC
         "love/src/modules/video/Video.h"
         "love/src/modules/video/VideoStream.cpp"
@@ -351,6 +374,7 @@ idf_component_register(
         georgik__lua
         georgik__ogg
         georgik__theora
+        georgik__sdl
 )
 
 #add_compile_definitions(LUA_32BITS)
