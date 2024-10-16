@@ -65,6 +65,11 @@ idf_component_register(
         "love/src/common/Vector.h"
         "love/src/common/version.h"
 
+        # add_library(love_3p_ddsparse
+        "love/src/libraries/ddsparse/ddsinfo.h"
+        "love/src/libraries/ddsparse/ddsparse.cpp"
+        "love/src/libraries/ddsparse/ddsparse.h"
+
         # add_library(love_3p_glslang
         # "love/src/libraries/luasocket/luasocket.cpp"
         # "love/src/libraries/glslang/glslang/Include/intermediate.h"
@@ -176,7 +181,7 @@ idf_component_register(
         # add_library(love_audio_root STATIC
         # "love/src/modules/audio/Audio.cpp"
         # "love/src/modules/audio/Audio.h"
-        # "love/src/modules/audio/Source.cpp"
+        "love/src/modules/audio/Source.cpp"
         # "love/src/modules/audio/Source.h"
         # "love/src/modules/audio/RecordingDevice.cpp"
         # "love/src/modules/audio/RecordingDevice.h"
@@ -198,6 +203,33 @@ idf_component_register(
         "love/src/modules/audio/null/Source.h"
         "love/src/modules/audio/null/RecordingDevice.cpp"
         "love/src/modules/audio/null/RecordingDevice.h"
+
+        # add_library(love_data STATIC
+        "love/src/modules/data/ByteData.cpp"
+        "love/src/modules/data/ByteData.h"
+        "love/src/modules/data/CompressedData.cpp"
+        "love/src/modules/data/CompressedData.h"
+        "love/src/modules/data/Compressor.cpp"
+        "love/src/modules/data/Compressor.h"
+        "love/src/modules/data/DataModule.cpp"
+        "love/src/modules/data/DataModule.h"
+        "love/src/modules/data/DataStream.cpp"
+        "love/src/modules/data/DataStream.h"
+        "love/src/modules/data/DataView.cpp"
+        "love/src/modules/data/DataView.h"
+        "love/src/modules/data/HashFunction.cpp"
+        "love/src/modules/data/HashFunction.h"
+        "love/src/modules/data/wrap_ByteData.cpp"
+        "love/src/modules/data/wrap_ByteData.h"
+        "love/src/modules/data/wrap_CompressedData.cpp"
+        "love/src/modules/data/wrap_CompressedData.h"
+        "love/src/modules/data/wrap_Data.cpp"
+        "love/src/modules/data/wrap_Data.h"
+        "love/src/modules/data/wrap_Data.lua"
+        "love/src/modules/data/wrap_DataModule.cpp"
+        "love/src/modules/data/wrap_DataModule.h"
+        "love/src/modules/data/wrap_DataView.cpp"
+        "love/src/modules/data/wrap_DataView.h"
 
         # add_library(love_event_root STATIC
         "love/src/modules/event/Event.cpp"
@@ -322,7 +354,44 @@ idf_component_register(
         "love/src/modules/graphics/wrap_Font.cpp"
         "love/src/modules/graphics/wrap_Graphics.cpp"
 
+        # add_library(love_image_root STATIC
         "love/src/modules/image/CompressedImageData.cpp"
+        "love/src/modules/image/CompressedImageData.h"
+        "love/src/modules/image/CompressedSlice.cpp"
+        "love/src/modules/image/CompressedSlice.h"
+        "love/src/modules/image/FormatHandler.cpp"
+        "love/src/modules/image/FormatHandler.h"
+        "love/src/modules/image/Image.cpp"
+        "love/src/modules/image/Image.h"
+        "love/src/modules/image/ImageData.cpp"
+        "love/src/modules/image/ImageData.h"
+        "love/src/modules/image/ImageDataBase.cpp"
+        "love/src/modules/image/ImageDataBase.h"
+        "love/src/modules/image/wrap_CompressedImageData.cpp"
+        "love/src/modules/image/wrap_CompressedImageData.h"
+        "love/src/modules/image/wrap_Image.cpp"
+        "love/src/modules/image/wrap_Image.h"
+        "love/src/modules/image/wrap_ImageData.cpp"
+        "love/src/modules/image/wrap_ImageData.h"
+        "love/src/modules/image/wrap_ImageData.lua"
+
+        # add_library(love_image_magpie STATIC
+        "love/src/modules/image/magpie/ASTCHandler.cpp"
+        "love/src/modules/image/magpie/ASTCHandler.h"
+        "love/src/modules/image/magpie/ddsHandler.cpp"
+        "love/src/modules/image/magpie/ddsHandler.h"
+        "love/src/modules/image/magpie/EXRHandler.cpp"
+        "love/src/modules/image/magpie/EXRHandler.h"
+        "love/src/modules/image/magpie/KTXHandler.cpp"
+        "love/src/modules/image/magpie/KTXHandler.h"
+        "love/src/modules/image/magpie/PKMHandler.cpp"
+        "love/src/modules/image/magpie/PKMHandler.h"
+        "love/src/modules/image/magpie/PNGHandler.cpp"
+        "love/src/modules/image/magpie/PNGHandler.h"
+        "love/src/modules/image/magpie/PVRHandler.cpp"
+        "love/src/modules/image/magpie/PVRHandler.h"
+        "love/src/modules/image/magpie/STBHandler.cpp"
+        "love/src/modules/image/magpie/STBHandler.h"
 
         # add_library(love_joystick_root STATIC
         "love/src/modules/joystick/Joystick.cpp"
@@ -413,6 +482,7 @@ idf_component_register(
     INCLUDE_DIRS
         "love/src"
         "love/src/modules"
+        "love/src/libraries"
 
     REQUIRES
         georgik__lua
