@@ -175,22 +175,46 @@ idf_component_register(
         "love/src/modules/data/DataModule.cpp"
         "love/src/modules/data/HashFunction.cpp"
 
+        # add_library(love_audio_root STATIC
+        "love/src/modules/audio/Audio.cpp"
+        "love/src/modules/audio/Audio.h"
+        "love/src/modules/audio/Source.cpp"
+        "love/src/modules/audio/Source.h"
+        "love/src/modules/audio/RecordingDevice.cpp"
+        "love/src/modules/audio/RecordingDevice.h"
+        "love/src/modules/audio/Filter.cpp"
+        "love/src/modules/audio/Filter.h"
+        "love/src/modules/audio/Effect.cpp"
+        "love/src/modules/audio/Effect.h"
+        "love/src/modules/audio/wrap_Audio.cpp"
+        "love/src/modules/audio/wrap_Audio.h"
+        "love/src/modules/audio/wrap_Source.cpp"
+        "love/src/modules/audio/wrap_Source.h"
+        "love/src/modules/audio/wrap_RecordingDevice.cpp"
+        "love/src/modules/audio/wrap_RecordingDevice.h"
+
+        # add_library(love_event_root STATIC
+        "love/src/modules/event/Event.cpp"
+        "love/src/modules/event/Event.h"
+        "love/src/modules/event/wrap_Event.cpp"
+        "love/src/modules/event/wrap_Event.h"
+        "love/src/modules/event/wrap_Event.lua"
 
         # add_library(love_filesystem_root STATIC
         "love/src/modules/filesystem/File.cpp"
         "love/src/modules/filesystem/File.h"
         "love/src/modules/filesystem/FileData.cpp"
         "love/src/modules/filesystem/FileData.h"
-        # "love/src/modules/filesystem/Filesystem.cpp"
-        # "love/src/modules/filesystem/Filesystem.h"
+        "love/src/modules/filesystem/Filesystem.cpp"
+        "love/src/modules/filesystem/Filesystem.h"
         "love/src/modules/filesystem/NativeFile.cpp"
         "love/src/modules/filesystem/NativeFile.h"
         "love/src/modules/filesystem/wrap_File.cpp"
         "love/src/modules/filesystem/wrap_File.h"
         "love/src/modules/filesystem/wrap_FileData.cpp"
         "love/src/modules/filesystem/wrap_FileData.h"
-        # "love/src/modules/filesystem/wrap_Filesystem.cpp"
-        # "love/src/modules/filesystem/wrap_Filesystem.h"
+        "love/src/modules/filesystem/wrap_Filesystem.cpp"
+        "love/src/modules/filesystem/wrap_Filesystem.h"
         "love/src/modules/filesystem/wrap_NativeFile.cpp"
         "love/src/modules/filesystem/wrap_NativeFile.h"
 
@@ -303,6 +327,14 @@ idf_component_register(
         "love/src/modules/joystick/wrap_JoystickModule.cpp"
         "love/src/modules/joystick/wrap_JoystickModule.h"
 
+        # add_library(love_joystick_sdl STATIC
+        "love/src/modules/joystick/sdl/Joystick.cpp"
+        "love/src/modules/joystick/sdl/Joystick.h"
+        "love/src/modules/joystick/sdl/JoystickSDL3.cpp"
+        "love/src/modules/joystick/sdl/JoystickSDL3.h"
+        "love/src/modules/joystick/sdl/JoystickModule.cpp"
+        "love/src/modules/joystick/sdl/JoystickModule.h"
+
         "love/src/modules/love/love.cpp"
 
         # add_library(love_math STATIC
@@ -332,6 +364,12 @@ idf_component_register(
         "love/src/modules/sensor/wrap_Sensor.h"
 
         "love/src/modules/system/System.cpp"
+
+        # add_library(love_timer STATIC
+        "love/src/modules/timer/Timer.cpp"
+        "love/src/modules/timer/Timer.h"
+        "love/src/modules/timer/wrap_Timer.cpp"
+        "love/src/modules/timer/wrap_Timer.h"
 
         # add_library(love_thread_root STATIC
         "love/src/modules/thread/Channel.cpp"
