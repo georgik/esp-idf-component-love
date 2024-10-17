@@ -490,10 +490,18 @@ idf_component_register(
         "love/src/modules/video/wrap_VideoStream.h"
 
         "love/src/modules/window/Window.cpp"
+
+        # Harfbuzz
+        "harfbuzz/src/hb-buffer.cc"
+        "harfbuzz/src/hb-static.cc"
+
     INCLUDE_DIRS
         "love/src"
         "love/src/modules"
         "love/src/libraries"
+
+        # Harfbuzz
+        "harfbuzz/src"
 
     REQUIRES
         georgik__lua
