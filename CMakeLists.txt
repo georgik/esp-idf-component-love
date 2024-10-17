@@ -494,6 +494,7 @@ idf_component_register(
         # Harfbuzz
         "harfbuzz/src/hb-buffer.cc"
         "harfbuzz/src/hb-static.cc"
+        "harfbuzz/src/hb-ucd.cc"
         "harfbuzz/src/hb-unicode.cc"
 
         # add_library(love_3p_lua53
