@@ -288,8 +288,8 @@ idf_component_register(
         # add_library(love_font_freetype STATIC
         "love/src/modules/font/freetype/Font.cpp"
         "love/src/modules/font/freetype/Font.h"
-        # "love/src/modules/font/freetype/HarfbuzzShaper.cpp"
-        # "love/src/modules/font/freetype/HarfbuzzShaper.h"
+        "love/src/modules/font/freetype/HarfbuzzShaper.cpp"
+        "love/src/modules/font/freetype/HarfbuzzShaper.h"
         "love/src/modules/font/freetype/TrueTypeRasterizer.cpp"
         "love/src/modules/font/freetype/TrueTypeRasterizer.h"
 
