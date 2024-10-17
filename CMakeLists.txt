@@ -70,6 +70,11 @@ idf_component_register(
         "love/src/libraries/ddsparse/ddsparse.cpp"
         "love/src/libraries/ddsparse/ddsparse.h"
 
+        # add_library(love_3p_glad
+        "love/src/libraries/glad/glad.cpp"
+        "love/src/libraries/glad/glad.hpp"
+        "love/src/libraries/glad/gladfuncs.hpp"
+
         # add_library(love_3p_glslang
         # "love/src/libraries/luasocket/luasocket.cpp"
         # "love/src/libraries/glslang/glslang/Include/intermediate.h"
@@ -555,6 +560,7 @@ idf_component_register(
         # Harfbuzz
         "harfbuzz/src/hb-buffer.cc"
         "harfbuzz/src/hb-font.cc"
+        "harfbuzz/src/hb-face.cc"
         "harfbuzz/src/hb-fallback-shape.cc"
         "harfbuzz/src/hb-ft.cc"
         "harfbuzz/src/hb-ot-shape.cc"
