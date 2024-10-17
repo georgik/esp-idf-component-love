@@ -170,6 +170,11 @@ idf_component_register(
         # "love/src/libraries/glslang/SPIRV/SpvTools.cpp"
         # "love/src/libraries/glslang/SPIRV/SpvTools.h"
 
+        # add_library(love_3p_lodepng
+        "love/src/libraries/lodepng/lodepng.cpp"
+        "love/src/libraries/lodepng/lodepng.h"
+    
+
         "love/src/libraries/noise1234/noise1234.cpp"
         "love/src/libraries/noise1234/noise1234.h"
         "love/src/libraries/noise1234/simplexnoise1234.cpp"
@@ -280,7 +285,13 @@ idf_component_register(
         "love/src/modules/font/wrap_Rasterizer.cpp"
         "love/src/modules/font/wrap_Rasterizer.h"
 
-
+        # add_library(love_font_freetype STATIC
+        "love/src/modules/font/freetype/Font.cpp"
+        "love/src/modules/font/freetype/Font.h"
+        # "love/src/modules/font/freetype/HarfbuzzShaper.cpp"
+        # "love/src/modules/font/freetype/HarfbuzzShaper.h"
+        "love/src/modules/font/freetype/TrueTypeRasterizer.cpp"
+        "love/src/modules/font/freetype/TrueTypeRasterizer.h"
 
         # add_library(love_graphics_root STATIC
         "love/src/modules/graphics/Buffer.cpp"
@@ -489,6 +500,7 @@ idf_component_register(
         georgik__ogg
         georgik__theora
         georgik__sdl
+        espressif__freetype
 )
 
 #add_compile_definitions(LUA_32BITS)
