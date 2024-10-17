@@ -463,6 +463,26 @@ idf_component_register(
         "love/src/modules/math/wrap_Transform.cpp"
         "love/src/modules/math/wrap_Transform.h"
 
+        # add_library(love_graphics_opengl STATIC
+        "love/src/modules/graphics/opengl/Buffer.cpp"
+        "love/src/modules/graphics/opengl/Buffer.h"
+        "love/src/modules/graphics/opengl/FenceSync.cpp"
+        "love/src/modules/graphics/opengl/FenceSync.h"
+        "love/src/modules/graphics/opengl/Graphics.cpp"
+        "love/src/modules/graphics/opengl/Graphics.h"
+        "love/src/modules/graphics/opengl/GraphicsReadback.cpp"
+        "love/src/modules/graphics/opengl/GraphicsReadback.h"
+        "love/src/modules/graphics/opengl/OpenGL.cpp"
+        "love/src/modules/graphics/opengl/OpenGL.h"
+        "love/src/modules/graphics/opengl/Shader.cpp"
+        "love/src/modules/graphics/opengl/Shader.h"
+        "love/src/modules/graphics/opengl/ShaderStage.cpp"
+        "love/src/modules/graphics/opengl/ShaderStage.h"
+        "love/src/modules/graphics/opengl/StreamBuffer.cpp"
+        "love/src/modules/graphics/opengl/StreamBuffer.h"
+        "love/src/modules/graphics/opengl/Texture.cpp"
+        "love/src/modules/graphics/opengl/Texture.h"
+
         # add_library(love_sensor_root STATIC
         "love/src/modules/sensor/Sensor.cpp"
         "love/src/modules/sensor/Sensor.h"
