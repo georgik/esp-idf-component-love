@@ -173,12 +173,18 @@ idf_component_register(
         # add_library(love_3p_lodepng
         "love/src/libraries/lodepng/lodepng.cpp"
         "love/src/libraries/lodepng/lodepng.h"
-    
 
         "love/src/libraries/noise1234/noise1234.cpp"
         "love/src/libraries/noise1234/noise1234.h"
         "love/src/libraries/noise1234/simplexnoise1234.cpp"
         "love/src/libraries/noise1234/simplexnoise1234.h"
+
+        # add_library(love_3p_lz4
+        "love/src/libraries/lz4/lz4.c"
+        "love/src/libraries/lz4/lz4.h"
+        "love/src/libraries/lz4/lz4hc.c"
+        "love/src/libraries/lz4/lz4hc.h"
+        "love/src/libraries/lz4/lz4opt.h"
 
         "love/src/modules/data/DataModule.cpp"
         "love/src/modules/data/HashFunction.cpp"
@@ -242,6 +248,10 @@ idf_component_register(
         "love/src/modules/event/wrap_Event.cpp"
         "love/src/modules/event/wrap_Event.h"
         "love/src/modules/event/wrap_Event.lua"
+
+        # add_library(love_event_sdl STATIC
+        "love/src/modules/event/sdl/Event.cpp"
+        "love/src/modules/event/sdl/Event.h"
 
         # add_library(love_filesystem_root STATIC
         "love/src/modules/filesystem/File.cpp"
@@ -421,6 +431,16 @@ idf_component_register(
         "love/src/modules/joystick/sdl/JoystickModule.cpp"
         "love/src/modules/joystick/sdl/JoystickModule.h"
 
+        # add_library(love_keyboard_root STATIC
+        "love/src/modules/keyboard/Keyboard.cpp"
+        "love/src/modules/keyboard/Keyboard.h"
+        "love/src/modules/keyboard/wrap_Keyboard.cpp"
+        "love/src/modules/keyboard/wrap_Keyboard.h"
+
+        # add_library(love_keyboard_sdl STATIC
+        "love/src/modules/keyboard/sdl/Keyboard.cpp"
+        "love/src/modules/keyboard/sdl/Keyboard.h"
+
         "love/src/modules/love/love.cpp"
 
         # add_library(love_math STATIC
@@ -448,6 +468,10 @@ idf_component_register(
         "love/src/modules/sensor/Sensor.h"
         "love/src/modules/sensor/wrap_Sensor.cpp"
         "love/src/modules/sensor/wrap_Sensor.h"
+
+        # add_library(love_sensor_sdl STATIC
+        "love/src/modules/sensor/sdl/Sensor.cpp"
+        "love/src/modules/sensor/sdl/Sensor.h"
 
         "love/src/modules/system/System.cpp"
 
@@ -480,6 +504,15 @@ idf_component_register(
         "love/src/modules/thread/sdl/threads.cpp"
         "love/src/modules/thread/sdl/threads.h"
 
+        # add_library(love_touch_root STATIC
+        "love/src/modules/touch/Touch.h"
+        "love/src/modules/touch/wrap_Touch.cpp"
+        "love/src/modules/touch/wrap_Touch.h"
+
+        # add_library(love_touch_sdl STATIC
+	    "love/src/modules/touch/sdl/Touch.cpp"
+	    "love/src/modules/touch/sdl/Touch.h"
+
         # add_library(love_video_root STATIC
         "love/src/modules/video/Video.h"
         "love/src/modules/video/VideoStream.cpp"
@@ -488,6 +521,14 @@ idf_component_register(
         "love/src/modules/video/wrap_Video.h"
         "love/src/modules/video/wrap_VideoStream.cpp"
         "love/src/modules/video/wrap_VideoStream.h"
+
+        # add_library(love_video_theora STATIC
+        "love/src/modules/video/theora/Video.cpp"
+        "love/src/modules/video/theora/Video.h"
+        "love/src/modules/video/theora/OggDemuxer.cpp"
+        "love/src/modules/video/theora/OggDemuxer.h"
+        "love/src/modules/video/theora/TheoraVideoStream.cpp"
+        "love/src/modules/video/theora/TheoraVideoStream.h"
 
         "love/src/modules/window/Window.cpp"
 
