@@ -495,6 +495,13 @@ idf_component_register(
         "harfbuzz/src/hb-buffer.cc"
         "harfbuzz/src/hb-static.cc"
 
+        # add_library(love_3p_lua53
+        "love/src/libraries/lua53/lprefix.h"
+        "love/src/libraries/lua53/lstrlib.c"
+        "love/src/libraries/lua53/lstrlib.h"
+        # "love/src/libraries/lua53/lutf8lib.c"
+        # "love/src/libraries/lua53/lutf8lib.h"
+
     INCLUDE_DIRS
         "love/src"
         "love/src/modules"
