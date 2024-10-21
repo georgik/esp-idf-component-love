@@ -524,6 +524,14 @@ idf_component_register(
         "love/src/modules/graphics/opengl/Texture.cpp"
         "love/src/modules/graphics/opengl/Texture.h"
 
+        # add_library(love_physics_root STATIC
+        "love/src/modules/physics/Body.cpp"
+        "love/src/modules/physics/Body.h"
+        "love/src/modules/physics/Joint.cpp"
+        "love/src/modules/physics/Joint.h"
+        "love/src/modules/physics/Shape.cpp"
+        "love/src/modules/physics/Shape.h"
+
         # add_library(love_sensor_root STATIC
         "love/src/modules/sensor/Sensor.cpp"
         "love/src/modules/sensor/Sensor.h"
@@ -650,8 +658,8 @@ idf_component_register(
         "love/src/libraries/lua53/lprefix.h"
         "love/src/libraries/lua53/lstrlib.c"
         "love/src/libraries/lua53/lstrlib.h"
-        # "love/src/libraries/lua53/lutf8lib.c"
-        # "love/src/libraries/lua53/lutf8lib.h"
+        "love/src/libraries/lua53/lutf8lib.c"
+        "love/src/libraries/lua53/lutf8lib.h"
 
     INCLUDE_DIRS
         "love/src"
