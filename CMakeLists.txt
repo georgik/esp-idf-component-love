@@ -70,6 +70,27 @@ idf_component_register(
         "love/src/libraries/ddsparse/ddsparse.cpp"
         "love/src/libraries/ddsparse/ddsparse.h"
 
+        # # add_library(love_3p_enet
+        # "love/src/libraries/enet/enet.cpp"
+        # "love/src/libraries/enet/lua-enet.h"
+        # "love/src/libraries/enet/libenet/callbacks.c"
+        # "love/src/libraries/enet/libenet/compress.c"
+        # "love/src/libraries/enet/libenet/host.c"
+        # "love/src/libraries/enet/libenet/list.c"
+        # "love/src/libraries/enet/libenet/packet.c"
+        # "love/src/libraries/enet/libenet/peer.c"
+        # "love/src/libraries/enet/libenet/protocol.c"
+        # # "love/src/libraries/enet/libenet/unix.c"
+        # # "love/src/libraries/enet/libenet/win32.c"
+        # "love/src/libraries/enet/libenet/include/enet/enet.h"
+        # "love/src/libraries/enet/libenet/include/enet/list.h"
+        # "love/src/libraries/enet/libenet/include/enet/protocol.h"
+        # "love/src/libraries/enet/libenet/include/enet/time.h"
+        # "love/src/libraries/enet/libenet/include/enet/types.h"
+        # # "love/src/libraries/enet/libenet/include/enet/unix.h"
+        # "love/src/libraries/enet/libenet/include/enet/utility.h"
+        # # "love/src/libraries/enet/libenet/include/enet/win32.h"
+
         # add_library(love_3p_glad
         "love/src/libraries/glad/glad.cpp"
         "love/src/libraries/glad/glad.hpp"
@@ -558,14 +579,50 @@ idf_component_register(
         "love/src/modules/window/Window.cpp"
 
         # Harfbuzz
+        "harfbuzz/src/hb-aat-layout.cc"
+        "harfbuzz/src/hb-aat-map.cc"
+        "harfbuzz/src/hb-blob.cc"
         "harfbuzz/src/hb-buffer.cc"
+        "harfbuzz/src/hb-buffer-serialize.cc"
+        "harfbuzz/src/hb-buffer-verify.cc"
+        "harfbuzz/src/hb-common.cc"
+        "harfbuzz/src/hb-draw.cc"
         "harfbuzz/src/hb-font.cc"
         "harfbuzz/src/hb-face.cc"
         "harfbuzz/src/hb-fallback-shape.cc"
         "harfbuzz/src/hb-ft.cc"
+        "harfbuzz/src/hb-number.cc"
+        "harfbuzz/src/hb-ot-metrics.cc"
+        "harfbuzz/src/hb-ot-cff1-table.cc"
+        "harfbuzz/src/hb-ot-cff2-table.cc"
+        "harfbuzz/src/hb-ot-color.cc"
+        "harfbuzz/src/hb-ot-face.cc"
+        "harfbuzz/src/hb-ot-font.cc"
+        "harfbuzz/src/hb-ot-layout.cc"
+        "harfbuzz/src/hb-ot-map.cc"
         "harfbuzz/src/hb-ot-shape.cc"
+        "harfbuzz/src/hb-ot-shape-fallback.cc"
+        "harfbuzz/src/hb-ot-shape-normalize.cc"
+        "harfbuzz/src/hb-ot-shaper-arabic.cc"
+        "harfbuzz/src/hb-ot-shaper-default.cc"
+        "harfbuzz/src/hb-ot-shaper-hangul.cc"
+        "harfbuzz/src/hb-ot-shaper-hebrew.cc"
+        "harfbuzz/src/hb-ot-shaper-indic-table.cc"
+        "harfbuzz/src/hb-ot-shaper-indic.cc"
+        "harfbuzz/src/hb-ot-shaper-khmer.cc"
+        "harfbuzz/src/hb-ot-shaper-myanmar.cc"
+        "harfbuzz/src/hb-ot-shaper-syllabic.cc"
+        "harfbuzz/src/hb-ot-shaper-thai.cc"
+        "harfbuzz/src/hb-ot-shaper-use.cc"
+        "harfbuzz/src/hb-ot-shaper-vowel-constraints.cc"
+        "harfbuzz/src/hb-ot-tag.cc"
+        "harfbuzz/src/hb-ot-var.cc"
+        "harfbuzz/src/hb-outline.cc"
+        "harfbuzz/src/hb-paint.cc"
+        "harfbuzz/src/hb-paint-extents.cc"
         "harfbuzz/src/hb-shape.cc"
         "harfbuzz/src/hb-shape-plan.cc"
+        "harfbuzz/src/hb-shaper.cc"
         "harfbuzz/src/hb-static.cc"
         "harfbuzz/src/hb-ucd.cc"
         "harfbuzz/src/hb-unicode.cc"
@@ -594,6 +651,11 @@ idf_component_register(
 )
 
 #add_compile_definitions(LUA_32BITS)
+
+# Add compile definitions
+target_compile_definitions(${COMPONENT_LIB} PRIVATE
+    -DHAVE_FREETYPE=1
+)
 
 target_compile_options(${COMPONENT_LIB} PRIVATE
     -fexceptions
