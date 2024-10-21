@@ -489,6 +489,21 @@ idf_component_register(
         "love/src/modules/math/wrap_Transform.cpp"
         "love/src/modules/math/wrap_Transform.h"
 
+        # add_library(love_mouse_root STATIC
+        "love/src/modules/mouse/Cursor.cpp"
+        "love/src/modules/mouse/Cursor.h"
+        "love/src/modules/mouse/Mouse.h"
+        "love/src/modules/mouse/wrap_Cursor.cpp"
+        "love/src/modules/mouse/wrap_Cursor.h"
+        "love/src/modules/mouse/wrap_Mouse.cpp"
+        "love/src/modules/mouse/wrap_Mouse.h"
+
+        # add_library(love_mouse_sdl STATIC
+        "love/src/modules/mouse/sdl/Cursor.cpp"
+        "love/src/modules/mouse/sdl/Cursor.h"
+        "love/src/modules/mouse/sdl/Mouse.cpp"
+        "love/src/modules/mouse/sdl/Mouse.h"
+
         # add_library(love_graphics_opengl STATIC
         "love/src/modules/graphics/opengl/Buffer.cpp"
         "love/src/modules/graphics/opengl/Buffer.h"
@@ -578,6 +593,10 @@ idf_component_register(
 
         "love/src/modules/window/Window.cpp"
 
+        # add_library(love_window_sdl STATIC
+        "love/src/modules/window/sdl/Window.cpp"
+        "love/src/modules/window/sdl/Window.h"
+
         # Harfbuzz
         "harfbuzz/src/hb-aat-layout.cc"
         "harfbuzz/src/hb-aat-map.cc"
@@ -655,6 +674,7 @@ idf_component_register(
 # Add compile definitions
 target_compile_definitions(${COMPONENT_LIB} PRIVATE
     -DHAVE_FREETYPE=1
+    # -DXXH_NAMESPACE=1
 )
 
 target_compile_options(${COMPONENT_LIB} PRIVATE
